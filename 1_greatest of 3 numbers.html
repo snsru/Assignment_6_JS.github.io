@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Greatest of Three Numbers</title>
+    <style>
+        body
+        {
+            background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp4W29qOfNxECczMscNToV34ra5wHpCteMmG7taKr7&s); 
+            margin:0;
+            padding:0;
+            background-size:cover;
+            background-repeat:no-repeat;
+            background-attachment:fixed;
+    
+        }
+    </style>
+    </head>
+    <script>
+        function check()
+        {
+            var x,y,z;
+            x=parseInt(document.getElementById("x").value);
+            y=parseInt(document.getElementById("y").value);
+            z=parseInt(document.getElementById("z").value);
+            if(x>y && x>z)
+            {
+                document.writeln(x," is the greatest of three Numbers");
+            }
+            else if(y>x && y>z)
+            {
+                document.writeln(y," is the greatest of three Numbers");
+            }
+            else
+            {
+                document.writeln(z," is the greatest of three Numbers");
+            }
+        }
+    </script>
+    <body>
+        <center>
+            <h1 style="color:red">Greatest of Three Numbers</h1>
+            Enter first number : <input type="text" id="x" style="color:blue"><br><br>
+            Enter second number : <input type="text" id="y" style="color:blue"><br><br>
+            Enter third number : <input type="text" id="z" style="color:blue"><br><br>
+            <button type="button" onclick="check()" style="background-color: green; color: white;">Result</button>
+        </center>
+    </body>
+</html>

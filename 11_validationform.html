@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <style>
+        body{
+            background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp4W29qOfNxECczMscNToV34ra5wHpCteMmG7taKr7&s); 
+            margin:0;
+            padding:0;
+            background-size:cover;
+            background-repeat:no-repeat;
+            background-attachment:fixed;
+    
+            }
+    </style>
+</head>
+<body>
+    <center>
+        <h1 style="color:red">Form Validation</h1>
+        <form id="myForm">
+            <label for="username" style="color:brown">Username:</label>
+            <input type="text" style="color:blue" id="username" name="username"><br><br>
+
+            <label for="password" style="color:brown">Password:</label>
+            <input type="password" id="password" name="password" style="color:blue"><br><br>
+
+            <label for="confirmPassword" style="color:brown">Confirm Password:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" style="color:blue"><br><br>
+
+            <label for="phoneNumber" style="color:brown">Phone Number:</label>
+            <input type="text" id="phoneNumber" name="phoneNumber" style="color:blue"> <br><br>
+
+            <label for="pinCode" style="color:brown">Pin Code:</label>
+            <input type="text" id="pinCode" name="pinCode" style="color:blue"><br><br>
+
+            <button type="button" onclick="validateForm()" style="background-color: green; color: white;">Submit</button>
+        </form>
+        <p id="validationResult"></p>
+    </center>
+
+    <script>
+        function validateForm() 
+        {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            var confirmPassword = document.getElementById('confirmPassword').value;
+            var phoneNumber = document.getElementById('phoneNumber').value;
+            var pinCode = document.getElementById('pinCode').value;
+
+            var validationResult = "";
+
+            if (username.length < 8) 
+            {
+                validationResult += "Username should be at least 8 characters.\n";
+            }
+
+            else if (password.length < 8) 
+            {
+                validationResult += "Password should be at least 8 characters.\n";
+            }
+
+            else if (password !== confirmPassword) 
+            {
+                validationResult += "Passwords do not match.\n";
+            }
+
+            else if (phoneNumber.length > 10) 
+            {
+                validationResult += "Phone number should be at most 10 digits.\n";
+            }
+
+            else if (pinCode.length > 6) 
+            {
+                validationResult += "Pin code should be at most 6 digits.\n";
+            }
+
+            else if (validationResult === "") 
+            {
+                validationResult = "Form is valid Submission successful.";
+            }
+            document.getElementById('validationResult').textContent = validationResult;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Armstrong Number Checker</title>
+    <style>
+        body 
+        {
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp4W29qOfNxECczMscNToV34ra5wHpCteMmG7taKr7&s');
+            margin:0;
+            padding:0;
+            background-size:cover;
+            background-repeat:no-repeat;
+            background-attachment:fixed;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1 style="color: red;">Armstrong Number Checker</h1>
+        Enter a number: <input type="text" id="number" style="color: blue;"><br><br>
+        <button type="button" onclick="Armstrong()" style="background-color: green; color: white;">Check Armstrong Number</button>
+        <p id="result"></p>
+    </center>
+
+    <script>
+        function Armstrong() 
+        {
+            var n=parseInt(document.getElementById('number').value);
+            var t1=n;
+            var t2=n;
+            var nd=0;
+            var arm=0;
+
+            while (t1>0) 
+            {
+                nd++;
+                t1=parseInt(t1/10);
+            }
+            while (t2>0) 
+            {
+                var r=parseInt(t2%10);
+                arm=arm+Math.pow(r,nd);
+                t2=parseInt(t2/10);
+            }
+
+            var rt="";
+            if (arm==n) 
+            {
+                rt="The given " +n+ " is an Armstrong number.";
+            } 
+            else 
+            {
+                rt="The given " +n+ " is not an Armstrong number.";
+            }
+
+            document.getElementById('result').textContent=rt;
+        }
+    </script>
+</body>
+</html>

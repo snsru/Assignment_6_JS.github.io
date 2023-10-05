@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Array Elements in Reverse</title>
+    <style>
+        body
+        {
+        background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSmMy7OR9CJ05KbgbzkbKAqVQ3s9yBSOgiZkZRnqEilx4yvvPVxV_ti419Fk_3aKaUBo8&usqp=CAU); 
+        margin:0;
+        padding:0;
+        background-size:cover;
+        background-repeat:no-repeat;
+        background-attachment:fixed;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1 style="color:red">Display Array Elements in Reverse</h1>
+        <form id="arrayForm">
+            <label for="elements">Enter array elements separated by commas:</label><br>
+            <input type="text" style="color:blue" id="elements" name="elements"><br><br>
+            <input type="button" style="background-color: green; color: white;" value="Display Array in Reverse" onclick="displayArrayInReverse()">
+        </form>
+        <p id="result"></p>
+    </center>
+
+    <script>
+        function displayArrayInReverse() 
+        {
+            var inputString=document.getElementById('elements').value;
+            var inputArray=inputString.split(",");
+
+            var displayString="Array elements in reverse: ";
+            for (var i=inputArray.length-1; i>=0; i--) 
+            {
+                displayString +=inputArray[i];
+                if (i > 0) 
+                {
+                    displayString += ", ";
+                }
+            }
+            document.getElementById('result').textContent = displayString;
+        }
+    </script>
+</body>
+</html>

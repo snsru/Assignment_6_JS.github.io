@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Array Elements</title>
+    <style>
+        body
+        {
+        background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbZTR0diMhu6uCESC8n9OFOaNSXGLEILXZrjnPU_f_cNa9rUHu3eqqQiV2MCwR7Fe2AgQ&usqp=CAU); 
+        margin:0;
+        padding:0;
+        background-size:cover;
+        background-repeat:no-repeat;
+        background-attachment:fixed;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1 style="color:red">Display Array Elements</h1>
+        
+        Enter array elements:<input type="text" style="color:blue" id="inputElements">
+        <br><br>
+        <button type="button" style="background-color: green; color: white;" onclick="displayArray()">Display Array</button>
+        <p id="result"></p>
+    </center>
+
+    <script>
+        function displayArray() 
+        {
+            var inputString=document.getElementById('inputElements').value;
+            var inputArray=inputString.split(",");
+            var displayString="Array elements: ";
+            for (var i=0; i<inputArray.length; i++) 
+            {
+                displayString += inputArray[i];
+                if (i < inputArray.length-1) 
+                {
+                    displayString +=", ";
+                }
+            }
+            document.getElementById('result').textContent=displayString;
+        }
+    </script>
+</body>
+</html>

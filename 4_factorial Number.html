@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=<device-width">
+        <title>factorial</title>
+        <style>
+            body
+            {
+            background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbZTR0diMhu6uCESC8n9OFOaNSXGLEILXZrjnPU_f_cNa9rUHu3eqqQiV2MCwR7Fe2AgQ&usqp=CAU); 
+            margin:0;
+            padding:0;
+            background-size:cover;
+            background-repeat:no-repeat;
+            background-attachment:fixed;
+            }
+        </style>
+    </head>
+<body>
+    <center>
+    <h1 style="color:red">Find Factorial of Number</h1>
+    Enter value:<input type="text" id="a" style="color:blue"><br><br>
+    
+    <button type="button" onclick="fact()" style="background-color: green; color: white;">FIND</button>
+    <script>
+        function fact()
+        {
+            var x,facto=1,i;
+            x=parseInt(document.getElementById("a").value);
+            if(x>=0)
+            {
+                if(x==0)
+                {
+                    document.writeln("Factorial of a ",+x," is= ",1);
+                }
+                else
+                {
+                    for(i=1;i<=x;i++)
+                    {
+                        facto=facto*i;
+                    }
+                    document.writeln("Factorial of a ",+x," is= ",+facto);
+                }
+            }
+           
+        }
+    </script>
+    </center>
+</body>
+</html>
